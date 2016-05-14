@@ -59,6 +59,9 @@
 # endif
 
 # if (defined __NetBSD__ && __NetBSD_Version__ >= 105270000) || defined __OpenBSD__ || defined __ANDROID__ /* NetBSD >= 1.5ZA, OpenBSD, Android */
+#  if defined(__ANDROID__) && defined(__CRYSTAX__)
+#  define fp_ub fp_->_ub
+#  else
   /* See <http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libc/stdio/fileext.h?rev=HEAD&content-type=text/x-cvsweb-markup>
      and <http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdio/fileext.h?rev=HEAD&content-type=text/x-cvsweb-markup> */
   struct __sfileext
@@ -67,6 +70,7 @@
       /* More fields, not relevant here.  */
     };
 #  define fp_ub ((struct __sfileext *) fp->_ext._base)->_ub
+#  endif
 # else                                         /* FreeBSD, NetBSD <= 1.5Z, DragonFly, Mac OS X, Cygwin, Android */
 #  define fp_ub fp_->_ub
 # endif
