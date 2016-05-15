@@ -48,7 +48,8 @@ AC_DEFUN([gl_HOST_OS],
        mint*)           os='MiNT';;
        mingw*)          os='MinGW';;
        lynxos*)         os='LynxOS';;
-       linux*)          os='GNU/Linux';;
+       linux*-gnu*)     os='GNU/Linux';;
+       linux*-android*) os='Android';;
        hpux*)           os='HP-UX';;
        hiux*)           os='HI-UX';;
        gnu*)            os='GNU';;
