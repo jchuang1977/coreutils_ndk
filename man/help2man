@@ -742,22 +742,24 @@ sub program_basename
 # Call program with given option and return results.
 sub get_option_value
 {
-    my ($prog, $opt) = @_;
-    my $stderr = $discard_stderr ? '/dev/null' : '&1';
-    my $value = join '',
-	map { s/ +$//; expand $_ }
-	map { dec $_ }
-	`$prog $opt 2>$stderr`;
+    #my ($prog, $opt) = @_;
+    #my $stderr = $discard_stderr ? '/dev/null' : '&1';
+    #my $value = join '',
+	#map { s/ +$//; expand $_ }
+	#map { dec $_ }
+	#`$prog $opt 2>$stderr`;
 
-    unless ($value)
-    {
-	my $err = N_("%s: can't get `%s' info from %s%s");
-	my $extra = $discard_stderr
-	    ? "\n" . N_("Try `--no-discard-stderr' if option outputs to stderr")
-	    : '';
+    #unless ($value)
+    #{
+	#my $err = N_("%s: can't get `%s' info from %s%s");
+	#my $extra = $discard_stderr
+	#    ? "\n" . N_("Try `--no-discard-stderr' if option outputs to stderr")
+	#    : '';
 
-	kark $err, $this_program, $opt, $prog, $extra;
-    }
+	#kark $err, $this_program, $opt, $prog, $extra;
+    #}
+
+    my $value = '';
 
     $value;
 }
