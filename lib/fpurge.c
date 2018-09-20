@@ -19,6 +19,7 @@
 /* Specification.  */
 #include <stdio.h>
 
+#undef HAVE___FPURGE
 #if HAVE___FPURGE                   /* glibc >= 2.2, Haiku, Solaris >= 7 */
 # include <stdio_ext.h>
 #endif
