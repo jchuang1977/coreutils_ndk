@@ -2608,7 +2608,7 @@ pkglibexecdir = @pkglibexecdir@
 # that $(transform) is applied to libexec at all given that is
 # for internal package naming, not privy to $(transform).
 transform = s/ginstall/install/;/libstdbuf/!$(program_transform_name)
-ACLOCAL = @ACLOCAL@
+ACLOCAL = true
 ALLOCA = @ALLOCA@
 ALLOCA_H = @ALLOCA_H@
 AMTAR = @AMTAR@
@@ -2616,9 +2616,9 @@ AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 APPLE_UNIVERSAL_BUILD = @APPLE_UNIVERSAL_BUILD@
 AR = @AR@
 ARFLAGS = @ARFLAGS@
-AUTOCONF = @AUTOCONF@
-AUTOHEADER = @AUTOHEADER@
-AUTOMAKE = @AUTOMAKE@
+AUTOCONF = true
+AUTOHEADER = true
+AUTOMAKE = true
 AWK = @AWK@
 BITSIZEOF_PTRDIFF_T = @BITSIZEOF_PTRDIFF_T@
 BITSIZEOF_SIG_ATOMIC_T = @BITSIZEOF_SIG_ATOMIC_T@
